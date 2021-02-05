@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="before">Cам пример: 
+    </div>
+    <div class="job_one">Задание один:</div>
+    <div class="job_two">Задание два:</div>
+    <script>
+//1. Дан большой текст, в котором для оформления прямой речи используются одинарные кавычки.
+//Придумать шаблон, который заменяет одинарные кавычки на двойные.
+    let str = `'aren't, isn't, don't, doesn't'. Lorem ipsum dolor sit amet, 'consectetur adipisicing elit'. Aut doloremque, dolorum harum maiores, modi nemo nisi officiis quasi quidem quos rem, sequi voluptates voluptatibus. Architecto assumenda incidunt maxime odio saepe!'`
+    // console.log(str)
+    // console.log(str.replace(/'/g, '"'))
+    let before = document.querySelector(".before")
+    before.insertAdjacentHTML("afterend", `${str}`)
+    let jobOne = document.querySelector(".job_one")
+    jobOne.insertAdjacentHTML("afterend", `${str.replace(/'/g, '"')}`)
+//2. Улучшить шаблон так, чтобы в конструкциях типа aren't одинарная кавычка не заменялась на двойную.
+    // console.log(str.replace(/\B'|'\B/gi, '"'))
+    let jobTwo = document.querySelector(".job_two")
+    jobTwo.insertAdjacentHTML("afterend", `${str.replace(/\B'|'\B/gi, '"')}`)
+    </script>
+</body>
+</html>
